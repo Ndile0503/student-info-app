@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'viewmodels/student_viewmodel.dart';
+import 'views/student_view.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Student Info App',
-
+      theme: ThemeData(primarySwatch: Colors.blue),
+     home: ChangeNotifierProvider(create: (context)=>StudentViewModel(),child: const StudentView(),),
       
     );
   }
